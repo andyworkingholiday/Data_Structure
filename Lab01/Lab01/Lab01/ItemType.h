@@ -20,6 +20,9 @@ public:
 
 	~ItemType() {}
 
+	// ArrayList에서 GET, DELETE, REPLACE 함수를 사용할 때 compareID함수를 쓰면 Generic에 위반되기 
+	// 때문에 따로 연산자를 정의해 주었습니다.
+
 	bool operator == (ItemType& data) {
 		if (this->m_SongNumber == data.m_SongNumber) return true;
 		return false;
@@ -53,11 +56,11 @@ public:
 	RelationType CompareBySongNumber(ItemType data);
 
 private:
-	string m_SongName;
-	string m_Composer;
-	string m_Artist;
-	int m_Genre;
-	int m_SongNumber;
+	string m_SongName; //곡명
+	string m_Composer; // 작곡가
+	string m_Artist; // 아티스트명
+	int m_Genre; // 장르 ex) 1 = Pop, 2 = Ballad ...
+	int m_SongNumber; // 곡의 고유번호 Primary key
 };
 
 #endif	// _ITEMTYPE_H

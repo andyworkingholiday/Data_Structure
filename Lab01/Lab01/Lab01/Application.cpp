@@ -57,6 +57,7 @@ int Application::GetCommand() {
 	return command;
 }
 
+// 키보드부터 입력을 받아 List에 data를 추가한다.
 int Application::AddMusic() {
 	if (m_List.IsFull()) return 0;
 	else {
@@ -69,6 +70,7 @@ int Application::AddMusic() {
 	return 1;
 }
 
+// List의 포인터를 초기화 한 후 처음 index부터 List의 끝까지 담긴 data를 모두 출력한다.
 void Application::DisplayAllMusic() {
 	if (m_List.IsEmpty()) return;
 
@@ -83,19 +85,21 @@ void Application::DisplayAllMusic() {
 	}
 }
 
+// 입력파일을 성공적으로 불러오면 1, 아니면 0
 int Application::OpenInFile(char *fileName) {
 	m_InFile.open(fileName);
 	if (m_InFile) return 1;
 	else return 0;
 }
 
-
+// 출력파일을 성공적으로 불러오면 1, 아니면 0
 int Application::OpenOutFile(char *fileName) {
 	m_OutFile.open(fileName);
 	if (m_OutFile) return 1;
 	else return 0;
 }
 
+// 성공적으로 입력파일을 불러오면 List에 입력파일의 data를 추가시킨다.
 int Application::ReadDataFromFile() {
 	ItemType Music;
 	char filename[FILENAMESIZE];
@@ -116,6 +120,7 @@ int Application::ReadDataFromFile() {
 	return 1;
 }
 
+// 성공적으로 출력파일을 불러오면 해당 파일에 List의 모든 data를 추가시킨다.
 int Application::WriteDataToFile() {
 	ItemType Music;
 	char filename[FILENAMESIZE];
@@ -134,6 +139,8 @@ int Application::WriteDataToFile() {
 	return 1;
 }
 
+// Arraylist의 Get 함수를 이용해서 List안에 찾고자 하는data가 있는지 검색한다. 
+// 있다면 그 data의 정보를 출력한다.
 void Application::RetrieveMusic() {
 	ItemType Music;
 
@@ -147,6 +154,8 @@ void Application::RetrieveMusic() {
 	else printf("\n\tThere is no Music you want to find.\n");
 }
 
+// Arraylist의 Delete 함수를 이용해서 List안에 삭제하고자 하는 data가 있는지 검색한다. 
+// 있다면 그 data를 삭제한 후 List의 data들을 출력한다.
 void Application::DeleteMusic() {
 	ItemType Music;
 
@@ -161,6 +170,8 @@ void Application::DeleteMusic() {
 	else printf("\n\tThere is no Music you want to delete.\n");
 }
 
+// 갱신하고 싶은 데이터의 모든 정보를 입력받는다.
+// 입력받은 data와 primary key가 일치하는 data를 List에서 찾아 갱신한다.
 void Application::ReplaceMusic() {
 	ItemType Music;
 
