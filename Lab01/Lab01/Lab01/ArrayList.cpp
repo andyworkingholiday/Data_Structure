@@ -30,12 +30,16 @@ bool ArrayList::IsEmpty() {
 	return false;
 }
 
-// List에 순차적으로 Item 추가 
+// List에 순차적으로 Item 추가 동일한 primary key가 있으면 추가를 못한다.
 int ArrayList::Add(ItemType data) {
 	if (!IsFull()) {
-		m_Array[m_Length] = data;
-		m_Length++;
-		return 1;
+		if (Get(data) == -1) {
+			m_Array[m_Length] = data;
+			m_Length++;
+			return 1;
+		}
+		else printf("\n\t Same SongNumber has found.\n");
+		return 0;
 	}
 	return 0;
 }

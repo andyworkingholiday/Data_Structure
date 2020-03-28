@@ -77,8 +77,8 @@ void Application::DisplayAllMusic() {
 	printf("\n\tCurrent list\n");
 	ItemType Music;
 	m_List.ResetList();
-
-	while (1) {
+	int len = m_List.GetLength();
+	while (len--) {
 		if (m_List.GetNextItem(Music) >= 0)
 			Music.DisplayRecordOnScreen();
 		else break;
@@ -129,14 +129,16 @@ int Application::WriteDataToFile() {
 
 	if (!OpenOutFile(filename)) return 0;
 	m_List.ResetList();
+	int len = m_List.GetLength();
 
-	while (1) {
+	while (len--) {
 		if (m_List.GetNextItem(Music) >= 0)
-			Music.WriteDataToFile(m_OutFile);
+			Music.WriteDataToFile(m_OutFile);	
 		else break;
 	}
-
+	m_OutFile.close();
 	return 1;
+
 }
 
 // Arraylist의 Get 함수를 이용해서 List안에 찾고자 하는data가 있는지 검색한다. 

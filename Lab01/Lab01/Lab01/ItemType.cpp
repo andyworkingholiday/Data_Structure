@@ -116,6 +116,7 @@ void ItemType::SetArtistFromKB() {
 
 //장르 입력받는 함수
 void ItemType::SetGenreFromKB() {
+	printf("\tBallad: 1, Pop: 2, Hiphop: 3, R&B: 4, etc:0\n");
 	printf("\tGenre    : ");
 	cin >> m_Genre;
 }
@@ -147,11 +148,11 @@ int ItemType::ReadDataFromFile(ifstream& fin) {
 
 //파일로 출력하는 함수
 int ItemType::WriteDataToFile(ofstream& fout) {
-	fout << m_SongName;
-	fout << m_Composer;
-	fout << m_Artist;
-	fout << m_Genre;
-	fout << m_SongNumber;
+	fout << m_SongName << " ";
+	fout << m_Composer << " ";
+	fout << m_Artist << " ";
+	fout << m_Genre << " ";
+	fout << m_SongNumber << endl;
 	return 1;
 }
 
