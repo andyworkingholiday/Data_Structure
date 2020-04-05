@@ -13,28 +13,28 @@ void Application::Run() {
 		case 3:		// make empty list.
 			m_List.MakeEmpty();
 			break;
-		case 4:
+		case 4: // Retrieve item
 			RetrieveItem();
 			break;
-		case 5:
+		case 5: // Retrieve item from the input usage
 			RetreiveRecordByMemberUsage();
 			break;
-		case 6:
+		case 6: // Retrieve item with including input name
 			RetreiveRecordByMemberName();
 			break;
-		case 7:
+		case 7: // Delete item
 			DeleteItem();
 			break;
-		case 8:
+		case 8: // Replace item
 			ReplaceItem();
 			break;
-		case 9:
+		case 9: // Read file
 			ReadDataFromFile();
 			break;
-		case 10:
+		case 10: //Write file
 			WriteDataToFile();
 			break;
-		case 0:
+		case 0: //end the program
 			return;
 		default:
 			cout << "\tIllegal selection...\n";
@@ -66,9 +66,10 @@ int Application::GetCommand() {
 	return command;
 }
 
+// Add new record into list.
 int Application::AddItem() {
 	if (m_List.IsFull()) {
-		printf("\tList is Full\n");
+		printf("\tList is Full\n"); // 가득 찼을 시 해당 문구 출력
 		return 0;
 	}
 
@@ -78,40 +79,43 @@ int Application::AddItem() {
 		m_List.Add(t);
 	}
 
-	DisplayAllItem();
+	DisplayAllItem(); // item을 추가 한 후 현재 list에 담긴 모든 데이터를 출력한다. 
 	return 1;
 }
 
+// 리스트에 담긴 모든 데이터 출력
 void Application::DisplayAllItem() {
 	if (m_List.IsEmpty()) {
-		printf("\tList is Empty\n");
+		printf("\tList is Empty\n"); // 리스트가 비어있을 시 해당 문구 출력 후 함수 종료
 		return;
 	}
 
 	printf("\n\tCurrent list\n");
 	ItemType t;
 	m_List.ResetList();
-	int len = m_List.GetLength();
+	int len = m_List.GetLength(); // 리스트에 담긴 아이템의 갯수
 
-	while (len--) {
+	while (len--) { // 아이템의 갯수만큼 data 출력
 		if (m_List.GetNextItem(t) >= 0)
 			t.DisplayRecordOnScreen();
 	}
 }
 
+// Open a file by file descriptor as an input file.
 int Application::OpenInFile(char *fileName) {
 	m_InFile.open(fileName);
 	if (m_InFile) return 1;
 	else return 0;
 }
 
-
+// Open a file by file descriptor as an output file.
 int Application::OpenOutFile(char *fileName) {
 	m_OutFile.open(fileName);
 	if (m_OutFile) return 1;
 	else return 0;
 }
 
+// Open a file as a read mode, read all data on the file, and set list by the data.
 int Application::ReadDataFromFile() {
 	ItemType t;
 	char filename[FILENAMESIZE];
@@ -132,6 +136,7 @@ int Application::ReadDataFromFile() {
 	return 1;
 }
 
+// Open a file as a write mode, and write all data into the file,
 int Application::WriteDataToFile() {
 	ItemType t;
 	char filename[FILENAMESIZE];
@@ -151,6 +156,7 @@ int Application::WriteDataToFile() {
 	return 1;
 }
 
+//Retrieve item with binary search
 void Application::RetrieveItem() {
 	ItemType t;
 
@@ -164,6 +170,7 @@ void Application::RetrieveItem() {
 	else printf("\n\tThere is no Item you want to find.\n");
 }
 
+//Delete item with binary search
 void Application::DeleteItem() {
 	ItemType t;
 
@@ -178,14 +185,15 @@ void Application::DeleteItem() {
 	else printf("\n\tThere is no student you want to delete.\n");
 }
 
+//Replace item with binary search
 void Application::ReplaceItem() {
 	ItemType t;
 
 	printf("\n\tEnter the KeyNumber you want to replace.\n");
 	t.SetKeyNumberFromKB();
 
-	int index = m_List.RetrieveByBS(t);
-	if (index != -1) {
+	int index = m_List.RetrieveByBS(t); // 먼저 해당 인덱스 찾음
+	if (index != -1) { // 찾을 시 primary number 제외한 모든 정보를 입력받는다
 		cout << "\tEnter the new data.\n" << endl;
 		t.SetUsageFromKB();
 		t.SetPdayFromKB();
@@ -200,6 +208,7 @@ void Application::ReplaceItem() {
 	else printf("\n\tThere is no Item you want to replace.\n");
 }
 
+// 키보드로 부터 입력받은 usage 번호로 데이터 찾기
 int Application::RetreiveRecordByMemberUsage() {
 	printf("\n\tEnter the Usage you want to find\n");
 	ItemType data;
@@ -208,6 +217,7 @@ int Application::RetreiveRecordByMemberUsage() {
 	return 0;
 }
 
+// 리스트의 처음부터 끝까지 탐색하면서 일치하는 usage 번호가 있는 지 검색한다.
 int Application::SearchListByMemberUsage(ItemType &inData) {
 	ItemType CurData;
 	m_List.ResetList();
@@ -225,6 +235,7 @@ int Application::SearchListByMemberUsage(ItemType &inData) {
 	return 0;
 }
 
+// 키보드로 부터 입력받은 name으로 데이터 찾기
 int Application::RetreiveRecordByMemberName() {
 	printf("\n\tEnter the name you want to find\n");
 	ItemType data;
@@ -233,6 +244,7 @@ int Application::RetreiveRecordByMemberName() {
 	return 0;
 }
 
+// 리스트의 처음부터 끝까지 탐색하면서 해당 string이 포함돼는지 검색한다.
 int Application::SearchListByMemberName(ItemType &inData) {
 	ItemType CurData;
 	m_List.ResetList();
@@ -240,7 +252,7 @@ int Application::SearchListByMemberName(ItemType &inData) {
 	bool found = false;
 	while (len--) {
 		m_List.GetNextItem(CurData);
-		if (CurData.GetName().find(inData.GetName()) != -1) {
+		if (CurData.GetName().find(inData.GetName()) != -1) { //string member 함수 find 사용 해당 string을 포함하지 않을시 -1을 return 하는 함수
 			CurData.DisplayRecordOnScreen();
 			found = true;
 		}

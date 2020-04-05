@@ -13,6 +13,7 @@ int ItemType::GetRday() {
 	return this->m_RecentDay;
 }
 
+
 int ItemType::GetPlace() {
 	return this->m_Place;
 }
@@ -75,6 +76,8 @@ void ItemType::CopyRecord(ItemType inData) {
 	this->m_KeyNumber = inData.GetKeyNumber();
 	this->m_Num = inData.GetNum();
 }
+
+// Usage는 int형이므로 해당 하는 Usage 번호가 있을 시 screen에 용도를 출력한다.
 void  ItemType::DisplayUsageOnScreen() {
 	switch (this->m_Usage) {
 	case 0:
@@ -119,6 +122,7 @@ void  ItemType::DisplayRdayOnScreen() {
 	cout << "\tRecent Use Day    : " << m_RecentDay << endl;
 }
 
+// m_Plce 는 int형이므로 해당 하는 Place 번호가 있을 시 screen에 용도를 출력한다.
 void ItemType::DisplayPlaceOnScreen() {
 	switch (this->m_Place) {
 	case 0:
@@ -164,6 +168,9 @@ void ItemType::DisplayRecordOnScreen() {
 	DisplayKeyNumberOnScreen();
 	DisplayNumOnScreen();
 }
+
+// int번호에 해당하는 usage를 화면에 띄워주고 해당하는 번호를 입력할 수 있게 끔 하였습니다. 
+// 0~9에 해당하는 번호가 아닐 시 다시 입력을 받습니다.
 void ItemType::SetUsageFromKB() {
 	cout << "\tEnter the number suitable for your usage." << endl;
 	cout << "\t=============== Usage ===============" << endl;
@@ -182,18 +189,22 @@ void ItemType::SetUsageFromKB() {
 	}
 }
 
+//년월일 6자리로 입력받습니다.
 void ItemType::SetPdayFromKB() {
 	cout << "\t=============== YYYYMMDD =============== ex(20191215)" << endl;
 	cout << "\tPurchase Day    : ";
 	cin >> m_PurchaseDay;
 }
 
+//년월일 6자리로 입력받습니다.
 void ItemType::SetRdayFromKB() {
 	cout << "\t=============== YYYYMMDD =============== ex(20191215)" << endl;
 	cout << "\tRecent Use Day    : ";
 	cin >> m_RecentDay;
 }
 
+// int번호에 해당하는 usage를 화면에 띄워주고 해당하는 번호를 입력할 수 있게 끔 하였습니다. 
+// 0~5에 해당하는 번호가 아닐 시 다시 입력을 받습니다.
 void ItemType::SetPlaceFromKB() {
 	cout << "\tEnter the number suitable for place you put." << endl;
 	cout << "\t=============== Usage ===============" << endl;
