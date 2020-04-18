@@ -1,0 +1,9 @@
+﻿  Application.cpp
+c:\users\jin\source\repos\lab03\lab03\unsortedlist.h(4): warning C4005: 'MAXSIZE': 매크로 재정의
+  c:\users\jin\source\repos\lab03\lab03\sortedlist.h(4): note: 'MAXSIZE'의 이전 정의를 참조하십시오.
+  ContainerType.cpp
+  main.cpp
+c:\users\jin\source\repos\lab03\lab03\sortedlist.h(4): warning C4005: 'MAXSIZE': 매크로 재정의
+  c:\users\jin\source\repos\lab03\lab03\unsortedlist.h(4): note: 'MAXSIZE'의 이전 정의를 참조하십시오.
+  코드를 생성하고 있습니다...
+  Lab03.vcxproj -> C:\Users\Jin\source\repos\Lab03\Debug\Lab03.exe
