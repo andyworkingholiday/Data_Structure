@@ -1,0 +1,9 @@
+﻿  Application.cpp
+c:\users\jin\source\repos\datastruct_project1\datastruct_project1\sortedlist.h(4): warning C4005: 'MAXSIZE': 매크로 재정의
+  c:\users\jin\source\repos\datastruct_project1\datastruct_project1\unsortedlist.h(4): note: 'MAXSIZE'의 이전 정의를 참조하십시오.
+  PlaceType.cpp
+  main.cpp
+c:\users\jin\source\repos\datastruct_project1\datastruct_project1\sortedlist.h(4): warning C4005: 'MAXSIZE': 매크로 재정의
+  c:\users\jin\source\repos\datastruct_project1\datastruct_project1\unsortedlist.h(4): note: 'MAXSIZE'의 이전 정의를 참조하십시오.
+  코드를 생성하고 있습니다...
+  DataStruct_Project1.vcxproj -> C:\Users\Jin\source\repos\DataStruct_Project1\Debug\DataStruct_Project1.exe
