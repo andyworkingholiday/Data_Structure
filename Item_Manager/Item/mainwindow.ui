@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1381</width>
+    <height>1180</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	font-family:century gothic;
+}
+
+#MainWindow {
+	background:url(:/Image/skyblue.png);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QToolButton" name="toolButton">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>110</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;
+border-radius:45px</string>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="icon">
+     <iconset resource="Images.qrc">
+      <normaloff>:/Image/login.png</normaloff>:/Image/login.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>128</width>
+      <height>128</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>160</y>
+      <width>801</width>
+      <height>951</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(0,0,255,0.4);
+border-radius:15px</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>50</y>
+       <width>671</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>25</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+font: 25pt;
+font-weight:bold;
+background:transparent;</string>
+     </property>
+     <property name="text">
+      <string>Item Manager</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="LogIn">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>510</y>
+       <width>551</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:15px;
+	font:15pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>LogIn</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SignUp">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>590</y>
+       <width>551</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:15px;
+	font:15pt;
+	font-weight:bold;
+
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>SignUp</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Quit">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>860</y>
+       <width>551</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:15px;
+	font:15pt;
+	font-weight:bold;
+
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Quit</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_ID">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>180</y>
+       <width>471</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+	background:transparent;
+	border:none;
+	border-bottom:2px solid;
+	color:#white;
+	font:15pt;
+	font-weight:bold;
+	
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>ID</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_PW">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>250</y>
+       <width>471</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+	background:transparent;
+	border:none;
+	border-bottom:2px solid;
+	color:#white;
+	font:15pt;
+	font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Password</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_Name">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>340</y>
+       <width>471</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+	background:transparent;
+	border:none;
+	border-bottom:2px solid;
+	color:#white;
+	font:15pt;
+	font-weight:bold;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Name</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Create">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>510</y>
+       <width>551</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:15px;
+	font:15pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Create</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Back">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>590</y>
+       <width>551</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:15px;
+	font:15pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>50</y>
+      <width>321</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:18pt;
+color:white;</string>
+    </property>
+    <property name="text">
+     <string>2015104124 진우빈</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1381</width>
+     <height>16</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="Images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

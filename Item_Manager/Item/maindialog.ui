@@ -1,0 +1,2834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainDialog</class>
+ <widget class="QDialog" name="MainDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1852</width>
+    <height>1184</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+	font-family:century gothic;
+	font-weight:bold;
+
+}
+
+#MainDialog {
+	background:url(:/Image/skyblue.png);
+}
+
+QTabWidget::pane {
+	border: 5px solid rgba(0,0,255,0.2);
+	background:rgba(0,0,255,0.2);
+	border-radius:8px
+} 
+
+QTabBar::tab {
+  background:white;
+  border: 1px solid rgba(0,0,255,0.2);
+  padding: 15px;
+  border-radius:5px
+} 
+
+QTabBar::tab:selected { 
+  color:white;
+  background:rgba(0,0,255,0.2);
+  margin-bottom: -1px; 
+}
+
+/* QGroupBox -------------------------------------------------------------- */
+
+QGroupBox {
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 4px;
+    margin-top: 16px;
+}
+
+
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 3px;
+    padding-left: 3px;
+    padding-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 16px;
+}
+
+QGroupBox::indicator {
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+}
+
+QGroupBox::indicator {
+    margin-left: 2px;
+}
+
+
+
+
+
+
+</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>30</y>
+     <width>651</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:white;
+font: 32pt;
+font-weight:bold;
+background:transparent;</string>
+   </property>
+   <property name="text">
+    <string>Item Manager</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>180</y>
+     <width>561</width>
+     <height>711</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>361</width>
+     <height>341</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="tabBarAutoHide">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="Add_Item">
+    <attribute name="title">
+     <string>Add Item</string>
+    </attribute>
+    <attribute name="toolTip">
+     <string>Add Item</string>
+    </attribute>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>70</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Usage </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>120</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Place</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>170</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Container</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>220</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Purchase Day</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>270</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Brand</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>320</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>420</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Primary Key</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>370</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Like</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="UsageAdd">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>70</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Furniture</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Electric</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Clothes</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Books</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Bath</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Cosmetics</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Stationery</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Food</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Exercise</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Etc</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="StorageAdd">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>120</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>LivingRoom</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Kitchen</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BathRoom</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BedRoom</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Library</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Etc</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QSpinBox" name="ContainerAdd">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>170</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="DayAdd">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>220</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="BrandAdd">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>270</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="NameAdd">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>320</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="LikeAdd">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>370</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Like</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Unlike</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QSpinBox" name="NumberAdd">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>420</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="AddPush">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>530</y>
+       <width>201</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:20px;
+	font:12pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Add to Storage</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="AddPush_2">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>530</y>
+       <width>201</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:20px;
+	font:12pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Add to Temp</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Delete_Item">
+    <attribute name="title">
+     <string>Delete Item</string>
+    </attribute>
+    <attribute name="toolTip">
+     <string>Delete Item</string>
+    </attribute>
+    <widget class="QGroupBox" name="ShowBox_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>521</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Delete By Primary Key</string>
+     </property>
+     <widget class="QPushButton" name="DeletePush">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>40</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Delete Item</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>261</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>KeyNumber</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="KeyDelete">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>40</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Change_Item">
+    <attribute name="title">
+     <string>Change Item</string>
+    </attribute>
+    <attribute name="toolTip">
+     <string>Change Information of Item</string>
+    </attribute>
+    <widget class="QLabel" name="label_21">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>450</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Primary Key</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="ChangePush">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>530</y>
+       <width>201</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:20px;
+	font:12pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Change Item</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="NumberChange">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>450</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="ChangeBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>501</width>
+       <height>411</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Change Info.</string>
+     </property>
+     <widget class="QSpinBox" name="ContainerChange">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>130</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="StorageChange">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>80</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>LivingRoom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kitchen</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>BathRoom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>BedRoom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Library</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Etc</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="BrandChange">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>230</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="UsageChange">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>30</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Furniture</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Electric</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Clothes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Books</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bath</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cosmetics</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Stationery</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Food</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Exercise</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Etc</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="LikeChange">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>330</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Like</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Unlike</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QDateEdit" name="DayChange">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>180</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="NameChange">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>280</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>31</x>
+        <y>30</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Usage </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>31</x>
+        <y>330</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Like</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>31</x>
+        <y>230</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Brand</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>31</x>
+        <y>280</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>31</x>
+        <y>80</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Place</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>31</x>
+        <y>130</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Container</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>31</x>
+        <y>180</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Purchase Day</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Find_Item">
+    <attribute name="title">
+     <string>Find Item</string>
+    </attribute>
+    <attribute name="toolTip">
+     <string>Find item by name, date, usage</string>
+    </attribute>
+    <widget class="QGroupBox" name="ShowBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>521</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Find By Usage and Storage</string>
+     </property>
+     <widget class="QPushButton" name="FindByUsage">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>140</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Find Item</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="UsageFind">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>40</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Furniture</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Electric</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Clothes</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Books</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bath</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cosmetics</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Stationery</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Food</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Exercise</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Etc</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="StorageFind">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>90</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LivingRoom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kitchen</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>BathRoom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>BedRoom</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Library</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Etc</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Place</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Usage </string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="ShowBox_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>521</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Find By Date</string>
+     </property>
+     <widget class="QPushButton" name="FindPush_2">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>340</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Find Item</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="FindByDate">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>140</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Find Item</string>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="DayEnd">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>90</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="DayStart">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>40</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_28">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Purchase Day (Begin)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>90</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Purchase Day (End)</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="ShowBox_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>430</y>
+       <width>521</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Find By Name</string>
+     </property>
+     <widget class="QPushButton" name="FindNamePush">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>40</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Find Item</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="NameFind">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>40</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="ShowBox_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>540</y>
+       <width>521</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Find By Primary Key</string>
+     </property>
+     <widget class="QPushButton" name="FindNumerPush">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>40</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Find Item</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>261</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>KeyNumber</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="KeyFind">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>40</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>910</y>
+     <width>561</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
+   <property name="currentIndex">
+    <number>2</number>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="tabBarAutoHide">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="Add_Photo">
+    <attribute name="title">
+     <string>Add Photo</string>
+    </attribute>
+    <attribute name="toolTip">
+     <string>Add Photo</string>
+    </attribute>
+    <widget class="QGroupBox" name="ShowBox_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>521</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Add Photo</string>
+     </property>
+     <widget class="QPushButton" name="ChoosePush">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>50</y>
+        <width>131</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:7pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Choose Image</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="PhotoEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>321</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>7</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="AddPhotoPush">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>130</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Add Photo</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="KeyAddPhoto">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>130</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_32">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>KeyNumber</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Show_Photo">
+    <attribute name="title">
+     <string>Show Photo</string>
+    </attribute>
+    <attribute name="toolTip">
+     <string>Show Photo</string>
+    </attribute>
+    <widget class="QGroupBox" name="ShowBox_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>521</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Show Photo</string>
+     </property>
+     <widget class="QLabel" name="label_33">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>261</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>KeyNumber</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ShowPhotoPush">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>60</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Show Photo</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="KeyShowPhoto">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>60</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Delete_Photo">
+    <attribute name="title">
+     <string>Delete Photo</string>
+    </attribute>
+    <widget class="QGroupBox" name="ShowBox_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>521</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Delete Photo</string>
+     </property>
+     <widget class="QLabel" name="label_34">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>261</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>century gothic</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>KeyNumber</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DeletePhotoPush">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>60</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background:white;	
+	border-radius:10px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Delete Photo</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="KeyDeletePhoto">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>60</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolButton" name="toolButton">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>20</y>
+     <width>171</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent;
+border-radius:45px
+</string>
+   </property>
+   <property name="text">
+    <string>...</string>
+   </property>
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/Image/product.png</normaloff>:/Image/product.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>96</width>
+     <height>96</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SavePush">
+   <property name="geometry">
+    <rect>
+     <x>1550</x>
+     <y>100</y>
+     <width>191</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>century gothic</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background:white;	
+	border-radius:15px;
+	font:12pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="QuitPush">
+   <property name="geometry">
+    <rect>
+     <x>1550</x>
+     <y>150</y>
+     <width>190</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background:white;	
+	border-radius:15px;
+	font:12pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>170</y>
+     <width>1101</width>
+     <height>551</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>2</number>
+   </property>
+   <widget class="QWidget" name="Mastet_Item">
+    <attribute name="title">
+     <string>Master</string>
+    </attribute>
+    <widget class="QTableWidget" name="MasterTable">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>1051</width>
+       <height>441</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::DashLine</enum>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>9</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>No.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usage</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Place</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Container</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Brand</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Register Time</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Purchase Day</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Like</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Temp_Item">
+    <attribute name="title">
+     <string>Temporary</string>
+    </attribute>
+    <widget class="QTableWidget" name="TempTable">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>1051</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::DashLine</enum>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>7</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>No.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usage</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Brand</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Register Time</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Purchase Day</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Like</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="label_23">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>380</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Primary Key</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="TempNumberAdd">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>380</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>430</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Place</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="TempStorageAdd">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>430</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>LivingRoom</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Kitchen</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BathRoom</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>BedRoom</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Library</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Etc</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>430</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
+     </property>
+     <property name="text">
+      <string>Container</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="TempContainerAdd">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>430</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="AddPush_3">
+     <property name="geometry">
+      <rect>
+       <x>860</x>
+       <y>420</y>
+       <width>201</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>century gothic</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background:white;	
+	border-radius:20px;
+	font:10pt;
+	font-weight:bold;
+}
+
+QPushButton:hover {
+	color:white;
+	background:rgba(0,0,0,0.8);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Move to Master</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Search_Item">
+    <attribute name="title">
+     <string>검색결과</string>
+    </attribute>
+    <widget class="QTableWidget" name="SearchTable">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>1051</width>
+       <height>441</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::DashLine</enum>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>9</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>No.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usage</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Place</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Container</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Brand</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Register Time</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Purchase Day</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Like</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>790</y>
+     <width>621</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="LivingRoomTab">
+    <attribute name="title">
+     <string>LivingRoom</string>
+    </attribute>
+    <widget class="QTableWidget" name="LivingRoomTable">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>591</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::DashLine</enum>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>No.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usage</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="KitchenTab">
+    <attribute name="title">
+     <string>Kitchen</string>
+    </attribute>
+    <widget class="QTableWidget" name="KitchenTable">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>591</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::DashLine</enum>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>No.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usage</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="BathRoomtab">
+    <attribute name="title">
+     <string>BathRoom</string>
+    </attribute>
+    <widget class="QTableWidget" name="BathRoomTable">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>591</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::DashLine</enum>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>No.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usage</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="BedRoomTab">
+    <attribute name="title">
+     <string>BedRoom</string>
+    </attribute>
+    <widget class="QTableWidget" name="BedRoomTable">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>591</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::DashLine</enum>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>No.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usage</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="LibraryTab">
+    <attribute name="title">
+     <string>Library</string>
+    </attribute>
+    <widget class="QTableWidget" name="LibraryTable">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>591</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::DashLine</enum>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>No.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usage</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="EtcTab">
+    <attribute name="title">
+     <string>Etc</string>
+    </attribute>
+    <widget class="QTableWidget" name="EtcTable">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>591</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="horizontalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::DashLine</enum>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>No.</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Usage</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="ShowBox_7">
+   <property name="geometry">
+    <rect>
+     <x>1320</x>
+     <y>750</y>
+     <width>521</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>century gothic</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="title">
+    <string>Item Image</string>
+   </property>
+   <widget class="QLabel" name="ImageLabel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>471</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/Image">
+        <file>login.png</file>
+        <file>galaxy.png</file>
+        <file>instagram.png</file>
+        <file>galaxys.jpg</file>
+        <file>rgalaxy.png</file>
+        <file>skyblue.png</file>
+        <file>product.png</file>
+        <file>logout.png</file>
+        <file>off.png</file>
+        <file>save.png</file>
+    </qresource>
+</RCC>
